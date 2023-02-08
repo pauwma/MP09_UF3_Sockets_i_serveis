@@ -30,22 +30,17 @@ public class TestApunts {
     public static void testB(String respuesta1, String respuesta2) throws IOException {
         URL url = new URL("https://docs.google.com/forms/d/e/1FAIpQLSdV5QvhChK0fBpAMo5pN7sIvktqwHGu1vdoWJFvBguCeMvYUw/formResponse");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
-        con.setRequestMethod("POST");
         con.setDoOutput(true);
-        con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
         OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());
         out.write("entry.835030737=" + respuesta1 + "&entry.1616686619=" + respuesta2);
         out.close();
-        InputStream in = url.openConnection().getInputStream();
-        in.close();
-        int responseCode = con.getResponseCode();
-        System.out.println("Response Code: " + responseCode);
+        InputStream in = con.getInputStream();
     }
 
     public static void main(String[] args) throws IOException {
         try {
-            //TestApunts.testA(new URL("https://elpuig.xeill.net"), "img");
-            TestApunts.testB("Pau2", "Si");
+            TestApunts.testA(new URL("https://elpuig.xeill.net"), "img");
+            TestApunts.testB("Pau4", "No");
 
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
