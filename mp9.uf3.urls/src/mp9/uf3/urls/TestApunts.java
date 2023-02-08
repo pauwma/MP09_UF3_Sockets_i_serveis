@@ -36,14 +36,16 @@ public class TestApunts {
         OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());
         out.write("entry.835030737=" + respuesta1 + "&entry.1616686619=" + respuesta2);
         out.close();
+        InputStream in = url.openConnection().getInputStream();
+        in.close();
         int responseCode = con.getResponseCode();
         System.out.println("Response Code: " + responseCode);
     }
 
     public static void main(String[] args) throws IOException {
         try {
-            TestApunts.testA(new URL("https://elpuig.xeill.net"), "img");
-            TestApunts.testB("Pau", "No");
+            //TestApunts.testA(new URL("https://elpuig.xeill.net"), "img");
+            TestApunts.testB("Pau2", "Si");
 
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
