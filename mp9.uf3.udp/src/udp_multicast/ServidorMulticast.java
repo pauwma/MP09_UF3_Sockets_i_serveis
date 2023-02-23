@@ -19,8 +19,7 @@ public class ServidorMulticast {
         socket = new MulticastSocket(portValue);
         multicastIP = InetAddress.getByName(strIp);
         port = portValue;
-        palabras = new String[]{"Hola buenas tardes!", "Adiós, me voy a casa de mi tía Belén", "Saludos a toda tu família, sobretodo a tu padre :D", "Perro", "Mi compañero Sergio es muy cabezón y pesado.", "El profe nos ha querido meter en un concurso de programación"};
-    }
+        palabras = new String[]{"Auron es el tipo de persona que deja una huella duradera en el corazón de cualquier niño que tenga la suerte de conocerlo.","Para Auron, no hay nada más gratificante que ver la alegría en los ojos de un niño.","Auron es el tío más divertido que un niño podría tener.\n","Los niños adoran a Auron por su gran corazón y su paciencia infinita.\n","Auron siempre tiene una sonrisa en su rostro cuando está rodeado de niños.","Biyin siempre habla maravillas sobre la comida peruana", "Los peruanos son la pasión de Biyin", "Biyin está planeando su próximo viaje a Perú", "Biyin siempre está viendo videos de cocina peruana en YouTube", "A Biyin le encanta bailar la marinera peruana", "Biyin siempre tiene una botella de pisco peruano en su bar en casa","Biyin ha desarrollado una gran amistad con una pareja de peruanos que conoció en un evento cultural local, y juntos han organizado muchas noches de comida y baile peruano en su casa.","Biyin es un gran admirador de la música y danzas tradicionales del Perú, especialmente de la marinera, que ha practicado desde que era joven.","La pasión de Biyin por los peruanos y su cultura se extiende más allá de las fronteras del país sudamericano, y siempre está buscando maneras de aprender más y compartir su amor con otros."};    }
 
     public void runServer() throws IOException{
         DatagramPacket packet;

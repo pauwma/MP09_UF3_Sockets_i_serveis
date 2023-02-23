@@ -26,13 +26,13 @@ public class ClienteMulticast {
 
     public void runClient() throws IOException{
         DatagramPacket packet;
-        byte [] receivedData = new byte[120];
+        byte [] receivedData = new byte[1200];
 
         socket.joinGroup(group,netIf);
         System.out.printf("Connectat a %s:%d%n",group.getAddress(),group.getPort());
 
         while(continueRunning){
-            packet = new DatagramPacket(receivedData, 120);
+            packet = new DatagramPacket(receivedData, 1200);
             socket.setSoTimeout(5000);
             try{
                 socket.receive(packet);
